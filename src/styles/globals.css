@@ -100,8 +100,71 @@ a {
   text-decoration: none;
 }
 
+svg {
+  display: block;
+  font: 10.5em 'Montserrat';
+  width: 960px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+
+.container {
+  display: flex;
+/*   border:1px solid red; */
+  height: 100%;
+  align-items: center;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #3dd5ff;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #40a78c;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #254c8a;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #00bd6b;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FDB731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+@media screen and (max-width: 600px) {
+  svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 400px;
+    margin: 0 auto;
   }
 }
