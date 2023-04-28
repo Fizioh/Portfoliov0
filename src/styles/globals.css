@@ -104,7 +104,7 @@ svg {
   display: block;
   font: 10.5em 'Montserrat';
   width: 960px;
-  height: 500px;
+  height: 620px;
   margin: 0 auto;
 }
 
@@ -162,9 +162,43 @@ svg {
 @media screen and (max-width: 600px) {
   svg {
     display: block;
-    font: 10.5em 'Montserrat';
+    font: 10.5em 'Arabic Transparent';
     width: 960px;
     height: 400px;
     margin: 0 auto;
   }
+}
+
+.stars-wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #013155 0%, #01162E 100%);
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50px;
+  animation: moveStars linear infinite;
+}
+
+.type-1 {
+  width: 1px;
+  height: 1px;
+}
+
+.type-2 {
+  width: 2px;
+  height: 2px;
+}
+
+.type-3 {
+  width: 3px;
+  height: 3px;
+}
+
+@keyframes moveStars {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-150px); }
+  100% { transform: translateY(0); }
 }

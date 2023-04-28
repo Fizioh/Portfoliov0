@@ -15,6 +15,7 @@ const navigation = [
 ]
 
 export default function Home() {
+  
   return (
     <div>
       <Navbar />
