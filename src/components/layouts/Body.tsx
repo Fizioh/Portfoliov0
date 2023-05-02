@@ -4,6 +4,8 @@ import { Typography, Box } from '@mui/material';
 export default function Body() {
   React.useEffect(() => {
     function createStars(type, qty) {
+      if (process.browser) {
+      if (typeof window !== 'undefined') {
       for(let i = 0; i < qty; i++) {
         let star = document.createElement('div');
         star.classList.add('star', `type-${type}`);
@@ -11,7 +13,8 @@ export default function Body() {
         star.style.bottom = `${randomNumber(1, 99)}%`;
         star.style.animationDuration = `${randomNumber(50, 200)}s`;
         document.querySelector('.stars-wrapper').appendChild(star);
-      }
+      }}
+    }
     }
     
     function randomNumber(min, max) {
@@ -41,8 +44,8 @@ export default function Body() {
           </svg>
         </div>
         <Box sx={{textAlign:"center"}}>
-          <Typography sx={{color:"#FDB731"}}>
-            Full-Stack Developer, currently sleeping...
+          <Typography sx={{color:"#e7ee23"}}>
+            Full-Stack Developer, currently sleeping in the stars...
           </Typography>
         </Box>
       </div>

@@ -4,20 +4,26 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import { useRouter } from 'next/router';
+
 
 export default function Navbar() {
+    const router = useRouter();
+    const handleClick = (page : string) => {
+        router.push('/' + page);
+      };
+
+
     return(
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{backgroundColor: "#FDB731", zIndex:10}}>
+            <AppBar position="static" sx={{textAlign:"center"}}>
             <Toolbar sx={{display: 'flex', justifyContent:"center"}}>
-                <Button color="inherit">
+                <Button color="inherit" onClick={() => {handleClick('projects')}}>
                     <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1 }}>
                     Projets
                     </Typography>
                 </Button>
-                <Button color="inherit">
+                <Button color="inherit" onClick={() => {handleClick('about')}}>
                     <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1 }}>
                     Contact
                     </Typography>
