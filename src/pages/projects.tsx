@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import {Typography, Box, Card} from '@mui/material';
+import {Typography, Box} from '@mui/material';
+import GitCard from '../components/layouts/GitCard'
 
 export default function Projets() {
     const [repos, setRepos] = React.useState([]);
@@ -12,25 +13,15 @@ export default function Projets() {
         })
     })
   return (
-    <div>
+    <Box sx={{width: '100%'}}>
         <Typography>
             Projets
         </Typography>
-        <Box>
+        <Box sx={{m: 1, p:1, display: 'flex', justifycontent: 'center', maxWidth: '800px'}}>
             {repos.map((repo) => ( 
-                <Card key={repo.id}>
-                    <Typography>
-                        {repo.name}
-                    </Typography>
-                    <Typography>
-                        {repo.description}
-                    </Typography>
-                    <Typography>
-                        {repo.language}
-                    </Typography>
-                </Card>
+                <GitCard key={repo.id} name={repo.name} description={repo.description} language={repo.language} />
             ))}
         </Box>
-    </div>
+    </Box>
   )
 }
