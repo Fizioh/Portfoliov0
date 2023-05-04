@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import {Typography, Box} from '@mui/material';
+import {Typography, Box, List, ListItem} from '@mui/material';
+import Navbar from '../components/Navbar';
 import GitCard from '../components/layouts/GitCard'
 
 export default function Projets() {
@@ -14,10 +15,8 @@ export default function Projets() {
     })
   return (
     <Box sx={{width: '100%'}}>
-        <Typography>
-            Projets
-        </Typography>
-        <Box sx={{m: 1, p:1, display: 'flex', justifycontent: 'center', maxWidth: '800px'}}>
+        <Navbar />
+        <Box display="flex" flexWrap="wrap" justifyContent="center" m={1} p={1}>
             {repos.map((repo) => ( 
                 <GitCard key={repo.id} name={repo.name} description={repo.description} language={repo.language} url={repo.html_url} />
             ))}
