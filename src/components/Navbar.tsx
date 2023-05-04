@@ -20,7 +20,7 @@ export default function Navbar() {
             <Toolbar sx={{display: 'flex', justifyContent:"center"}}>
                 <Button color="inherit" onClick={() => {handleClick('projects')}}>
                     <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1 }}>
-                    Projets
+                    {} Projets
                     </Typography>
                 </Button>
                 <Button color="inherit" onClick={() => {handleClick('about')}}>

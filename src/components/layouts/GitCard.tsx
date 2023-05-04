@@ -6,6 +6,14 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+interface CardProps {
+  key: number
+  name: string
+  description: string
+  language: string
+  url: string
+}
+
 const bull = (
   <Box
     component="span"
@@ -15,14 +23,14 @@ const bull = (
   </Box>
 );
 
-export default function GitCard({key, name, description, language, url}) {
+export default function GitCard({key, name, description, language, url}: CardProps) {
   return (
-    <Card sx={{ width: 350, height: 265, minWidth: 275, boxShadow: '0 0 10 10', backgroundColor: '#ffffffe7', m: 1, p:1  }} key={key}>
+    <Card variant="outlined" sx={{ width: 350, height: 265, minWidth: 275, boxShadow: '0 0 10 10', backgroundColor: '#ffffffe7', m: 1, p:1  }} key={key}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography variant="h5" component="div">
           {name}
         </Typography>
-        <Typography variant="h5" component="div">
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {language}
         </Typography>
         <Typography variant="body2">
