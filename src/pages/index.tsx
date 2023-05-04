@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from 'next/router';
 import Home from "./home";
-import About from "./about";
+import About from "./contact";
 import Projects from "./projects";
 
 export default function App() {
@@ -11,8 +11,8 @@ export default function App() {
     return <Home />;
   }
 
-  if (router.pathname === '/about') {
-    return <About />;
+  if (router.pathname === '/contact') {
+    return <Contact />;
   }
 
   if (router.pathname === '/projects') {
