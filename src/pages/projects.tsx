@@ -19,7 +19,7 @@ export default function Projets() {
         </Typography>
         <Box sx={{m: 1, p:1, display: 'flex', justifycontent: 'center', maxWidth: '800px'}}>
             {repos.map((repo) => ( 
-                <GitCard key={repo.id} name={repo.name} description={repo.description} language={repo.language} />
+                <GitCard key={repo.id} name={repo.name} description={repo.description} language={repo.language} url={repo.html_url} />
             ))}
         </Box>
     </Box>

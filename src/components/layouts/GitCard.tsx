@@ -15,7 +15,7 @@ const bull = (
   </Box>
 );
 
-export default function GitCard({key, name, description, language}) {
+export default function GitCard({key, name, description, language, url}) {
   return (
     <Card sx={{ width: 350, height: 265, minWidth: 275, boxShadow: '0 0 10 10', backgroundColor: '#ffffffe7', m: 1, p:1  }} key={key}>
       <CardContent>
@@ -30,7 +30,7 @@ export default function GitCard({key, name, description, language}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="contained">More</Button>
+        <Button size="small" variant="contained" target="_blank" href={url}>More</Button>
       </CardActions>
     </Card>
   );
