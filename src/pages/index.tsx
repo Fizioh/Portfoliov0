@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from 'next/router';
 import Home from "./home";
-import About from "./contact";
+import Contact from "./contact";
 import Projects from "./projects";
 
 export default function App() {

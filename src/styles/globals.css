@@ -116,6 +116,14 @@ svg {
   align-items: center;
 }
 
+.card_details {
+
+  display: flex;
+  flex-direction: column;            
+  justify-content: space-evenly;
+  
+}
+
 .text-copy {
     fill: none;
     stroke: white;
@@ -149,6 +157,7 @@ svg {
 	stroke: #FDB731;
 	animation-delay: -5s;
 }
+
 
 @keyframes stroke-offset{
 	100% {stroke-dashoffset: -35%;}

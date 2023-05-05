@@ -14,13 +14,15 @@ export default function Projets() {
         })
     })
   return (
-    <Box sx={{width: '100%'}}>
-        <Navbar />
-        <Box display="flex" flexWrap="wrap" justifyContent="center" m={1} p={1}>
-            {repos.map((repo) => ( 
-                <GitCard key={repo.id} name={repo.name} description={repo.description} language={repo.language} url={repo.html_url} />
-            ))}
+    <div className="stars-wrapper">
+        <Box sx={{width: '100%'}}>
+            <Navbar />
+            <Box display="flex" flexWrap="wrap" justifyContent="center" m={1} p={1}>
+                {repos.map((repo) => ( 
+                    <GitCard key={repo.id} name={repo.name} description={repo.description} language={repo.language} url={repo.html_url} />
+                ))}
+            </Box>
         </Box>
-    </Box>
+    </div>
   )
 }
