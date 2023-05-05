@@ -7,7 +7,7 @@ import Projects from "./projects";
 export default function App() {
   const router = useRouter();
 
-  if (router.pathname === '/') {
+  if (router.pathname === '/home') {
     return <Home />;
   }
 
