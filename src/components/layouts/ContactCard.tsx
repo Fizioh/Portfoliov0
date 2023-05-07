@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -29,27 +30,31 @@ interface ContactProps {
 
 export default function ContactCard({id, name, icon, alias, url, color, theme} :ContactProps) {
   return (
-    <Card key={id} sx={{ width: 380, height: 500, borderRadius: '35px', textAlign: 'center', background: color, boxShadow: 'rgba(255, 255, 255, 0.24) 0px 3px 8px;', color: theme, display: 'flex' }}>
-      <CardHeader
-        title={name}
-        subheader={alias}
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="subtitle2">
-            {url}
-        </ Typography>
-      </CardContent>
-      <CardActions disableSpacing sx={{justifyContent: 'center'}}>
-        <IconButton aria-label="add to favorites">
-          <KeyboardDoubleArrowUpIcon sx={{color: theme}} />
-        </IconButton>
-      </CardActions>
+    <Card className="floating" key={id} sx={{ width: 380, height: 500, borderRadius: '35px', textAlign: 'center', background: color, boxShadow: 'rgba(255, 255, 255, 0.24) 0px 3px 8px;', color: theme, display: 'flex', justifyContent: 'center' }}>
+      <Box className="card_container">
+        <CardHeader
+          title={name}
+          subheader={alias}
+          className="card_details"
+        />
+        <CardMedia
+          component="img"
+          height="194"
+          image="/static/images/cards/paella.jpg"
+          alt="Paella dish"
+          className="card_details"
+        />
+        <CardContent className="card_details">
+          <Typography variant="subtitle2">
+              {url}
+          </ Typography>
+        </CardContent>
+        <CardActions disableSpacing sx={{justifyContent: 'center'}} className="card_details">
+          <IconButton aria-label="add to favorites">
+            <KeyboardDoubleArrowUpIcon sx={{color: theme, fontSize: '2rem'}} />
+          </IconButton>
+        </CardActions>
+      </Box>
     </Card>
   );
 }

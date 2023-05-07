@@ -19,7 +19,7 @@ export default function Contact() {
   return (
     <div className="stars-wrapper">
         <Navbar />
-        <Box display="flex" flexWrap="wrap" justifyContent="space-around" m={1} p={1}>
+        <Box display="flex" flexWrap="wrap" justifyContent="space-around" m={4} p={4}>
         {dataContact.map((contact: ContactProps) => (
             <ContactCard 
                 id={contact.id}
