@@ -4,7 +4,9 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import SvgIcon from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
+import {githubIcon} from '../../assets/icons/iconGit'
 
 interface CardProps {
   key: number
@@ -16,7 +18,7 @@ interface CardProps {
 
 export default function GitCard({key, name, description, language, url}: CardProps) {
   return (
-    <Card variant="outlined" sx={{justifyContent: 'center', width: 300, height: 350, minWidth: 275, boxShadow: '0 0 10 10', backgroundColor: '#ffffffe7', m: 1, p:1, textAlign: 'center', borderRadius: '35px'  }} key={key}>
+    <Card variant="outlined" sx={{justifyContent: 'center', width: 200, height: 300, minWidth: 225, boxShadow: '0 0 10 10', backgroundColor: '#ffffffe7', m: 1, p:1, textAlign: 'center', borderRadius: '35px'  }} key={key}>
       <Box className="card_container">
         <CardContent className="card_details">
           <Typography variant="h5">
@@ -30,7 +32,7 @@ export default function GitCard({key, name, description, language, url}: CardPro
           </Typography>
         </CardContent>}
         <CardContent className="card_details">
-          <Typography variant="body2">
+          <Typography variant="body2" className="card_text">
             {description}
           </Typography>
         </CardContent>
@@ -39,14 +41,15 @@ export default function GitCard({key, name, description, language, url}: CardPro
             style={{
               borderRadius: 35,
               backgroundColor: "#748d8c",
-              padding: "9px 18px",
+              padding: "6px 12px",
               fontSize: "9px"
             }} 
             size="small" 
             variant="contained" 
             target="_blank" 
             href={url}>
-              Source
+             <Typography sx={{fontSize: '0.6rem'}}>Source</Typography> 
+             <SvgIcon sx={{pl: 0.5, ml: 0.5, fontSize: '1.3rem'}}>{githubIcon}</SvgIcon>
             </Button>
             <Button 
             style={{
