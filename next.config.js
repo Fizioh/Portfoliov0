@@ -10,6 +10,8 @@ const nextConfig = {
       },
     ]
   },
+  basePath: '/Portfoliov0',
+  assetPrefix: '/Portfoliov0/',
 }
 
 module.exports = nextConfig
